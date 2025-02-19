@@ -65,7 +65,7 @@
         const certNumber = urlParams.get("cert");
 
         if (certNumber) {
-            fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?cert=" + encodeURIComponent(certNumber))
+            fetch("https://script.google.com/macros/s/AKfycbyM5AaXzF3ERkmo_HKJHcH8b8UcQKKAuQgQO0_d2MSRF2YTTL6pJZruUzgB7wmS3XLM/exec?cert=" + encodeURIComponent(certNumber))
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === "valid") {
