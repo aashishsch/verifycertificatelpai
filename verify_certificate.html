@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate - AI Fundamentals Workshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h2 {
+            color: #0073e6;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .loading {
+            display: none;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Certificate Verification</h2>
+        <p>Enter your Certificate Number to verify authenticity.</p>
+        <input type="text" id="certificateNumber" placeholder="Enter Certificate Number" required>
+        <button onclick="verifyCertificate()">Verify</button>
+        <p class="loading" id="loadingText">🔄 Verifying, please wait...</p>
+    </div>
+
+    <script>
+        function verifyCertificate() {
+            let certNumber = document.getElementById("certificateNumber").value.trim();
+            if (certNumber === "") {
+                alert("Please enter a Certificate Number.");
+                return;
+            }
+
+            document.getElementById("loadingText").style.display = "block";
+
+            // Redirect to result page with certificate number as a query parameter
+            window.location.href = "certificate_result.html?cert=" + encodeURIComponent(certNumber);
+        }
+    </script>
+
+</body>
+</html>
